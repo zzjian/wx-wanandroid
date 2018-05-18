@@ -103,10 +103,10 @@ Page({
     })
   },
   search: (e)=> {
-    ui.navigateTo(`../../pages/article/list/list?title=${e.detail.value}`)
+    ui.navigateTo(`../../pages/article/list?title=${e.detail.value}`)
   },
   clickHotkey: function(e) {
-    ui.navigateTo(`../../pages/article/list/list?title=${e.currentTarget.dataset.name}`)
+    ui.navigateTo(`../../pages/article/list?title=${e.currentTarget.dataset.name}`)
   },
   clickWebItem: function(e) {
     var link = e.currentTarget.dataset.link

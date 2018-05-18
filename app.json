@@ -3,7 +3,7 @@
     "pages/home/home",
     "pages/search/search",
     "pages/system/system",
-    "pages/article/list/list",
+    "pages/article/list",
     "pages/detail/detail",
     "pages/project/project",
     "pages/navigation/navigation",

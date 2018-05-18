@@ -83,6 +83,6 @@ Page({
     })
   },
   clickChildItem: function(e) {
-    ui.navigateTo(`../../pages/article/list/list?cid=${e.currentTarget.id}&title=${e.currentTarget.dataset.title}`)
+    ui.navigateTo(`../../pages/article/list?cid=${e.currentTarget.id}&title=${e.currentTarget.dataset.title}`)
   }
 })

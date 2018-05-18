@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "loadMoreView":"../../../components/loadMoreView/index",
-        "statusLayout":"../../../components/statusLayout/statusLayout"
-    }
-}
