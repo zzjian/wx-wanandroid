@@ -1,0 +1,28 @@
+/* pages/system/system.wxss */
+
+.view-item {
+    padding: 15px;
+    justify-content: space-between;
+    flex: 1;
+    display: flex;
+    
+}
+
+.view-item view:first-child{
+    display: flex;
+}
+
+.view-item view:first-child image{
+    margin-right: 20px;
+}
+
+image {
+    width: 20px;
+    height: 20px;
+    align-self: center
+}
+
+.view-children {
+    font-size: 15px;
+    padding: 15px 0px 15px 55px;
+}

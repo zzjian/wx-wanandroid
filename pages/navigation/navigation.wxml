@@ -1,0 +1,17 @@
+<!--pages/navigation/navigation.wxml-->
+<view class="view-root">
+    <view class="view-search" bindtap='search'>
+        <icon type='search' size='20' color='#bfbfbf'></icon>
+        <text>搜索关键词以空格形式分开</text>
+    </view>
+
+    <view class="view-item" wx:for="{{items}}" wx:key="cid">
+        <view>{{item.name}}</view>
+        <view>
+            <view wx:for="{{item.articles}}" wx:key="id" wx:for-item="child" data-link="{{child.link}}" bindtap='clickItem'>
+                {{child.title}}
+            </view>
+        </view>
+        
+    </view>
+</view>

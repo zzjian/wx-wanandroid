@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/search/search",
+    "pages/system/system",
+    "pages/article/list/list",
+    "pages/detail/detail",
+    "pages/project/project",
+    "pages/navigation/navigation",
+    "pages/mine/mine",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#3c3c3c",
+    "selectedColor": "#f7053e",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home_sel.png"
+      },
+      {
+        "pagePath": "pages/navigation/navigation",
+        "text": "导航",
+        "iconPath": "img/navigation.png",
+        "selectedIconPath": "img/navigation_sel.png"
+      },
+      {
+        "pagePath": "pages/system/system",
+        "text": "体系",
+        "iconPath": "img/system.png",
+        "selectedIconPath": "img/system_sel.png"
+      },
+      {
+        "pagePath": "pages/project/project",
+        "text": "项目",
+        "iconPath": "img/project.png",
+        "selectedIconPath": "img/project_sel.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "img/mine.png",
+        "selectedIconPath": "img/mine_sel.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

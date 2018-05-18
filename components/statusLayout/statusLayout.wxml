@@ -1,0 +1,11 @@
+<!--components/statusLayout/statusLayout.wxml -->
+<view id='root' class="status-layout-root" style="{{rootStyle}}" hidden="{{status=='CONTENT'}}">
+    <view class="status-main" bindtap='onClickListener'>
+        <image class="{{status=='LOADING'?'status-image-anim':''}}" style="width:{{imgWidth}}px; height:{{imgHeight}}px;" src='{{statusImage}}'></image>
+        <view>{{statusText}}</view>
+    </view>
+</view>
+<view class="content" hidden="{{status!='CONTENT'}}">
+    <slot></slot>
+</view>
+

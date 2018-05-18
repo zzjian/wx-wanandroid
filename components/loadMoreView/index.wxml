@@ -1,0 +1,5 @@
+<!--components/loadMoreView/index.wxml-->
+<view class="view-loadmore" hidden='{{!hasMore}}'>
+    <image class="image-loadmore" src='../../img/loading.png'></image>
+    <text>加载中...</text>
+  </view>

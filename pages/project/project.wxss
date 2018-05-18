@@ -1,0 +1,49 @@
+/* pages/project/project.wxss */
+
+.view-item {
+    margin: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    border: 1px solid #eee;
+    display: flex;
+    padding: 10px;
+    
+}
+
+.view-item image{
+    width: 100px;
+    height: 162.85px;
+    float: left;
+    flex-shrink : 0
+}
+
+.view-right {
+    display: flex;
+  flex-direction: column;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.view-right view:first-child{
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.view-right view:nth-child(2){
+    color: #545C63;
+  margin-bottom: 5px;
+  display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    
+}
+
+.view-right view:nth-child(3) {
+    flex: 1
+}
+
+.view-right view:nth-child(4) {
+    font-size: 12px;
+    color: #545C63;
+}

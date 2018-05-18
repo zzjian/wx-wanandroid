@@ -1,0 +1,25 @@
+<!--pages/search/search.wxml-->
+<view class="view-root">
+    <view class="view-search">
+            <input placeholder='搜索关键词以空格形式分开' placeholder-style='color: #bfbfbf;' confirm-type='search' bindconfirm='search'></input>
+            <icon type='search' size='20' color='#bfbfbf'></icon>
+    </view>
+
+    <view class="view-hot">热搜</view>
+
+    <view class="view-hotkey">
+        <view style="background-color: {{item.bcolor}}" wx:for="{{hotkey}}" wx:key="id" data-name="{{item.name}}" bindtap='clickHotkey'>
+            {{item.name}}
+        </view>
+    </view>
+
+    <view class="view-hot">
+        常用网站
+    </view>
+
+    <view class="view-hotkey">
+        <view style="background-color: {{item.bcolor}}" wx:for="{{friends}}" wx:key="id" bindtap='clickHotKey' data-link="{{item.link}}" bindtap='clickWebItem'>
+            {{item.name}}
+        </view>
+    </view>
+</view>

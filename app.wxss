@@ -1,0 +1,9 @@
+/**app.wxss**/
+.view-root{
+  font-size: 14px;
+  height:100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #3c3c3c;
+  width:100%;
+  position:  absolute
+}

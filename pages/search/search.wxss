@@ -1,0 +1,39 @@
+/* pages/search/search.wxss */
+.view-search{
+    border: 1px solid #dadada;
+    background-color: #fafafa;
+    border-radius: 5px;
+    display: flex;
+    margin: 15px 15px 0px 15px;
+    padding: 6px 15px;
+}
+
+.view-search input{
+    flex: 1;
+}
+
+.view-search icon{
+    align-self: center;
+}
+
+.view-hot {
+    color: #f7053e;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.view-hotkey {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 15px;
+}
+
+.view-hotkey view {
+    margin-top: 10px;
+    margin-right: 15px;
+    color: #fff;
+    border-radius: 3px;
+    text-align: center;
+    padding: 3px 8px;
+}

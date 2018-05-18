@@ -1,0 +1,13 @@
+<!--pages/project/project.wxml-->
+<view class="view-root">
+    <view id='{{index}}' class="view-item" wx:for="{{items}}" wx:key="id"  data-link="{{item.link}}" bindtap='clickItem'>
+        <image src='{{item.envelopePic}}' lazy-load='{{true}}}'/>
+        <view class="view-right">
+            <view>{{item.title}}</view>
+            <view>{{item.desc}}</view>
+            <view></view>
+            <view>{{item.niceDate}} {{item.author}}</view>
+        </view>
+    </view>
+    <loadMoreView id="loadMoreView"></loadMoreView>
+</view>

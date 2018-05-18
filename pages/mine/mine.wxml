@@ -1,0 +1,19 @@
+<!--pages/mine/mine.wxml-->
+<view class='view-root'>
+    <view class="view-login">
+        <image src='http://www.wanandroid.com/resources/image/pc/logo.png'></image>
+        <view>未登录</view>
+    </view>
+
+    <view class="view-item">
+        <image src='../../img/collect.png'></image>
+        <text>收藏</text>
+        <image src='../../img/more.png'></image>
+    </view>
+
+    <view class="view-item" bindtap='clickAboutus'>
+        <image src='../../img/us.png'></image>
+        <text>关于我们</text>
+        <image src='../../img/more.png'></image>
+    </view>
+</view>
