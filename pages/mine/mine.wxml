@@ -1,6 +1,6 @@
 <!--pages/mine/mine.wxml-->
 <view class='view-root'>
-    <view class="view-login">
+    <view class="view-login" bindtap="toLogin">
         <image src='http://www.wanandroid.com/resources/image/pc/logo.png'></image>
         <view>未登录</view>
     </view>
@@ -17,3 +17,5 @@
         <image src='../../img/more.png'></image>
     </view>
 </view>
+
+

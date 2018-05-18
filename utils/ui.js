@@ -9,6 +9,7 @@ export const showToast = function(content,duration) {
 
 var isShowLoading = false
 export const showLoading = function(title) {
+    if(isShowLoading) return
     wx.showLoading({
         title: title?title:'',
         mask:true,

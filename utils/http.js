@@ -1,10 +1,13 @@
 const ui = require('../utils/ui')
 
 const request = function(method){
-
+    
     return (obj)=>{
+        console.log(`request obj`)
+        console.log(obj)
+
+        if(!obj || !obj.url) return
         if(obj.showLoading != false){
-            ui.hideLoading()
             ui.showLoading("加载中...")
         }
         var data = {}

@@ -1,2 +1,20 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class='root view-root'>
+    <view class="view-content">
+        <view>
+            <view class="view-title active">登录</view>
+            <view class="view-title">·</view>
+            <view class="view-title">注册</view>
+        </view>
+        <form>
+                <view class="view-input input-top">
+                    <image src='../../img/username.png'></image>
+                    <input placeholder="用户名"></input>
+                </view>
+                <view class="view-input input-bottom">
+                        <image src='../../img/password.png'></image>
+                        <input placeholder="密码"></input>
+                    </view>
+            </form>
+    </view>
+</view>

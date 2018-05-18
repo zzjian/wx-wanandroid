@@ -1,1 +1,62 @@
 /* pages/login/login.wxss */
+.root {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.view-content {
+    /* background-color: #fff; */
+    /* margin: 15px; */
+    /* box-shadow: 1px 1px 3px 0 rgba(0,0,0,.05); */
+    /* border: 1px solid #eee; */
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    justify-content: center; 
+    align-items: center;
+}
+
+.view-content > view {
+    display: flex;
+    flex-direction: row;
+}
+.view-title {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+}
+
+.active {
+    font-weight: bold;
+    color: #ea6f5a;
+    border-bottom: 2px solid #ea6f5a;
+}
+
+.view-input {
+    border: 1px solid #c8c8c8;
+    background-color: #f1f1f1;
+    padding: 10px;
+    display: flex;
+    background-color: hsla(0,0%,71%,.1);
+    align-items: center;
+}
+
+.view-input image {
+    width: 20px;
+    height: 20px;
+}
+
+.view-input input {
+    margin-left: 15px;
+}
+
+.input-top {
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+    margin-top: 25px;
+}
+
+.input-bottom {
+    border-radius: 0 0 4px 4px;
+}

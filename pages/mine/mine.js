@@ -68,5 +68,8 @@ Page({
   },
   clickAboutus: function() {
     ui.navigateTo(`../../pages/detail/detail?link=http://wanandroid.com/about`)
+  },
+  toLogin: function() {
+    ui.navigateTo(`../../pages/login/login`)
   }
 })
