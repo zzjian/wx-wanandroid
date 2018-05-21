@@ -2,20 +2,40 @@
 
 ## 介绍
 
-wx-wanandroid 是根据 [wanandroid API](http://www.wanandroid.com/blog/show/2) 实现的微信小程序客户端, UI 大部分直接借鉴于 [官网](http://wanandroid.com) . 所有功能基本根据 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/) 提供的 API 实现, 该项目仅供学习使用。(持续完善中, 感兴趣的小伙伴不妨点个 star ~)
+wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) 实现的微信小程序客户端, UI 大部分直接借鉴于 [官网](http://wanandroid.com) . 所有功能基本根据 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/) 提供的 API 实现, 该项目仅供学习使用。(持续完善中, 感兴趣的小伙伴不妨点个 star ~)
 
 ## 效果
 
 <div>
-<img width="270" height="480" src=""/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E9%A6%96%E9%A1%B5.png"/>
 
-<img width="270" height="480" src=""/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E9%A6%96%E9%A1%B52.png"/>
 
 <br/>
 
-<img width="270" height="480" src=""/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E5%AF%BC%E8%88%AA.png"/>
 
-<img width="270" height="480" src=""/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E4%BD%93%E7%B3%BB.png"/>
+<br/>
+
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E9%A1%B9%E7%9B%AE.png"/>
+
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%88%91%E7%9A%84.png"/>
+<br/>
+
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E7%99%BB%E5%BD%95.png"/>
+
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%90%9C%E7%B4%A2.png"/>
+<br/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%90%9C%E7%B4%A22.png"/>
+
+
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%90%9C%E7%B4%A22.png"/>
+<br/>
+
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E5%B8%96%E5%AD%90.png"/>
+
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E8%AF%A6%E6%83%85.png"/>
 </div>
 
 
