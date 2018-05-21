@@ -12,7 +12,6 @@
     /* border: 1px solid #eee; */
     display: flex;
     flex-direction: column;
-    padding: 25px;
     justify-content: center; 
     align-items: center;
 }
@@ -25,6 +24,7 @@
     padding-left: 8px;
     padding-right: 8px;
     padding-bottom: 8px;
+    font-size: 16px;
 }
 
 .active {
@@ -54,9 +54,20 @@
 .input-top {
     border-radius: 4px 4px 0 0;
     border-bottom: none;
-    margin-top: 25px;
 }
 
 .input-bottom {
     border-radius: 0 0 4px 4px;
+}
+
+form {
+    width: 80vw;
+    margin-top: 40px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #3194d0;
+    color: #fff;
+    font-size: 16px;
 }

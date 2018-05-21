@@ -1,25 +1,25 @@
 <!--pages/article/list/list.wxml-->
 <view class='view-root'>
-    <statusLayout id="statusLayout" status='LOADING'>
-            <block wx:for="{{items}}" wx:key="id">
-                    <view id='{{index}}' class="view-item" bindtap='clickItem'>
-                        <rich-text nodes="{{item.title}}"></rich-text>
-                        <view >
-                            <view class="view-left">
+    <statusLayout id="statusLayout" status='LOADING' bindOnClickListener='reload'>
+        <block wx:for="{{items}}" wx:key="id">
+                <view id='{{index}}' class="view-item" bindtap='clickItem'>
+                    <rich-text nodes="{{item.title}}"></rich-text>
+                    <view >
+                        <view class="view-left">
+                            <view>
+                                    <view>作者: </view>
+                                    <view>{{item.author}}</view>    
+                                </view>
                                 <view>
-                                        <view>作者: </view>
-                                        <view>{{item.author}}</view>    
-                                    </view>
-                                    <view>
-                                        <view>时间: </view>
-                                        <view>{{item.niceDate}}</view>    
-                                    </view>
-                            </view>
-                            <image src="../../../img/collect.png"></image>
+                                    <view>时间: </view>
+                                    <view>{{item.niceDate}}</view>    
+                                </view>
                         </view>
-                        
+                        <image id='{{index}}' src="{{item.collect||isCollectPage?'../../img/collect.png':'../../img/uncollect.png'}}" catchtap='collect'></image>
                     </view>
-                </block>
-                <loadMoreView id="loadMoreView"></loadMoreView>
+                    
+                </view>
+        </block>
+        <loadMoreView id="loadMoreView"></loadMoreView>
     </statusLayout>
 </view>

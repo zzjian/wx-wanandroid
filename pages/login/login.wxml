@@ -6,15 +6,17 @@
             <view class="view-title">·</view>
             <view class="view-title">注册</view>
         </view>
-        <form>
+        <form bindsubmit="formSubmit">
                 <view class="view-input input-top">
                     <image src='../../img/username.png'></image>
-                    <input placeholder="用户名"></input>
+                    <input name='username' placeholder="用户名"></input>
                 </view>
                 <view class="view-input input-bottom">
                         <image src='../../img/password.png'></image>
-                        <input placeholder="密码"></input>
-                    </view>
-            </form>
+                        <input name='password' placeholder="密码"></input>
+                </view>
+
+                <button form-type='submit'>登录</button>
+        </form>
     </view>
 </view>

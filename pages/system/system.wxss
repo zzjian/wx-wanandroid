@@ -2,27 +2,32 @@
 
 .view-item {
     padding: 15px;
-    justify-content: space-between;
-    flex: 1;
     display: flex;
     
 }
 
-.view-item view:first-child{
+.view-item image:first-child{
     display: flex;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    margin-right: 15px;
 }
 
-.view-item view:first-child image{
+.view-item view:nth-child(2){
     margin-right: 20px;
+    align-self: center;
+    flex: 1;
 }
 
-image {
+.view-item image:nth-child(3){
     width: 20px;
     height: 20px;
     align-self: center
 }
 
+
 .view-children {
     font-size: 15px;
-    padding: 15px 0px 15px 55px;
+    padding: 15px 0px 15px 60px;
 }

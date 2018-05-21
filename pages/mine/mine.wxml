@@ -2,11 +2,11 @@
 <view class='view-root'>
     <view class="view-login" bindtap="toLogin">
         <image src='http://www.wanandroid.com/resources/image/pc/logo.png'></image>
-        <view>未登录</view>
+        <view>{{username}}</view>
     </view>
 
-    <view class="view-item">
-        <image src='../../img/collect.png'></image>
+    <view class="view-item" bindtap='clickCollect'>
+        <image src='../../img/uncollect.png'></image>
         <text>收藏</text>
         <image src='../../img/more.png'></image>
     </view>
@@ -16,6 +16,8 @@
         <text>关于我们</text>
         <image src='../../img/more.png'></image>
     </view>
+
+    <button hidden="{{username=='未登录'}}" bindtap='logout'>退出登录</button>
 </view>
 
 

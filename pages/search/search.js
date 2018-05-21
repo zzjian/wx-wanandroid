@@ -1,6 +1,7 @@
 // pages/search/search.js
 const http = require('../../utils/http')
 const ui = require('../../utils/ui')
+var searchHistory = []
 Page({
 
   /**
@@ -11,7 +12,14 @@ Page({
     friends: [],
     colors: ['rgb(77, 204, 246)', 'rgb(255, 153, 153)', 'rgb(153, 153, 51)', 
     'rgb(0, 153, 153)', 'rgb(255, 153, 0)', 'rgb(77, 204, 246)', 'rgb(255, 153, 153)', 'rgb(153, 153, 51)', 
-  'rgb(0, 153, 153)', 'rgb(255, 153, 0)']  
+  'rgb(0, 153, 153)', 'rgb(255, 153, 0)'],
+    historyView: {
+      anim:{},
+      height: 0,
+      isShow: false
+    },
+    system:{},
+    searchHistory: []
   },
 
   /**
@@ -23,6 +31,28 @@ Page({
     })
     this.loadHotkey()
     this.loadFriend()
+
+    var that = this
+    wx.getStorage({
+      key: 'searchHistory',
+      success: function(res){
+        searchHistory = res.data.split(',')
+      },
+      fail: function() {
+        searchHistory = []
+      },
+      complete: function() {
+        that.data.searchHistory = searchHistory
+      }
+    })
+    
+    wx.getSystemInfo({
+      success: function(res) {
+        that.setData({
+          system: res
+        })
+      }
+    })
   },
 
   /**
@@ -102,14 +132,71 @@ Page({
       }
     })
   },
-  search: (e)=> {
-    ui.navigateTo(`../../pages/article/list?title=${e.detail.value}`)
+  search: function(e) {
+    this.saveSearchHistory(e.detail.value)
+    ui.navigateTo(`../../pages/article/list?title=${e.detail.value}&scenes=SEARCH`)
+    this.closeHistoryView()
   },
   clickHotkey: function(e) {
-    ui.navigateTo(`../../pages/article/list?title=${e.currentTarget.dataset.name}`)
+    this.saveSearchHistory(e.currentTarget.dataset.name)
+    ui.navigateTo(`../../pages/article/list?title=${e.currentTarget.dataset.name}&scenes=SEARCH`)
   },
   clickWebItem: function(e) {
     var link = e.currentTarget.dataset.link
     ui.navigateTo(`../../pages/detail/detail?link=${link}`)
+  },
+  clickHostoryItem: function(e) {
+    this.saveSearchHistory(e.currentTarget.dataset.key)
+    ui.navigateTo(`../../pages/article/list?title=${e.currentTarget.dataset.key}&scenes=SEARCH`)
+  },
+  saveSearchHistory: function(key) {
+    var index =  searchHistory.findIndex(item=>{
+      return item == key
+    })
+    if(index != -1) {
+      searchHistory.splice(index, 1)
+    }
+    searchHistory.unshift(key)
+    wx.setStorage({
+      key:'searchHistory',
+      data: searchHistory.join()
+    })
+  },
+  inputSearch: function(e) {
+    console.log(e)
+    var curr = searchHistory.filter(item=> item.includes(e.detail.value))
+    this.setData({
+      searchHistory: curr
+    })
+  },
+  obtainInputFocus: function(e){
+    this.setData({
+      'historyView.isShow': true,
+      searchHistory: this.data.searchHistory
+    })
+    var bgAnim = wx.createAnimation({
+        duration: 300,
+        timingFunction: "ease-out"
+    })
+    bgAnim.opacity(1).step()
+    setTimeout(function () {
+        this.setData({
+            'historyView.anim': bgAnim.export()
+        })
+    }.bind(this), 100)
+  },
+  closeHistoryView: function(e){
+    var anim = wx.createAnimation({
+      duration: 300,
+      timingFunction: "ease-out"
+    })
+    anim.opacity(0).step()
+
+    this.setData({'historyView.anim': anim.export()})
+    setTimeout(function () {
+        this.setData({
+              'historyView.isShow': false
+        })
+    }.bind(this), 300)
   }
 })

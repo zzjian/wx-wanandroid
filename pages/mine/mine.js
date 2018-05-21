@@ -1,12 +1,13 @@
 // pages/mine/mine.js
 const ui = require('../../utils/ui')
+const http = require('../../utils/http')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    username: '未登录'
   },
 
   /**
@@ -29,7 +30,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    wx.getStorage({
+      key: 'username',
+      success: function(res){
+        that.setData({
+          username: res.data
+        })
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   },
 
   /**
@@ -70,6 +85,28 @@ Page({
     ui.navigateTo(`../../pages/detail/detail?link=http://wanandroid.com/about`)
   },
   toLogin: function() {
+    if(this.data.username != '未登录') return
     ui.navigateTo(`../../pages/login/login`)
+  },
+  clickCollect: function(){
+    if(this.data.username == '未登录') {
+      ui.navigateTo(`../../pages/login/login`)
+      return
+    } 
+    ui.navigateTo(`../../pages/article/list?title=我的收藏&scenes=COLLECT`)
+  },
+  logout: function() {
+    var that = this
+    wx.removeStorage({
+      key: "username"
+    })
+    wx.removeStorage({
+      key: "cookie",
+      complete: function() {
+        that.setData({
+          username: '未登录'
+        })
+      }
+    })
   }
 })

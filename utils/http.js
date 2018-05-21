@@ -1,7 +1,7 @@
 const ui = require('../utils/ui')
 
 const request = function(method){
-    
+
     return (obj)=>{
         console.log(`request obj`)
         console.log(obj)
@@ -12,24 +12,44 @@ const request = function(method){
         }
         var data = {}
         if(obj.data) data = obj.data
+        var header = {'content-type': 'application/json'}
+
+        try {
+            var value = wx.getStorageSync('cookie')
+            if (value) {
+                header['cookie'] = value
+            }
+          } catch (e) {
+            // Do something when catch error
+          }
         wx.request({
             url : encodeURI(obj.url),
             method: method,
             data: data,
-            header: {
-                'content-type': 'application/json' // 默认值
-            },
+            header: header,
             success: (res)=>{
+                console.log(res)
                 if(!res.data || res.statusCode >= 300 || res.statusCode < 200) {
                     ui.showToast("接口请求失败, 请稍后重试!")
+                    if (obj.fail) {
+                        obj.fail()
+                    }
                     return
                 }
                 if(res.data.errorCode < 0) {
                     ui.showToast(res.data.errorMsg)
+                    if (obj.fail) {
+                        obj.fail()
+                    }
                     return
                 }
-                if(obj.success)
-                    obj.success(res.data.data)
+                if(obj.success) {
+                    if (obj.obtainOriginalData) {
+                        obj.success(res)
+                    } else {
+                        obj.success(res.data.data)
+                    }
+                }
             },
             fail: ()=>{
                 ui.showToast("接口请求失败, 请稍后重试!")

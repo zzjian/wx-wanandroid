@@ -1,8 +1,19 @@
 <!--pages/search/search.wxml-->
 <view class="view-root">
     <view class="view-search">
-            <input placeholder='搜索关键词以空格形式分开' placeholder-style='color: #bfbfbf;' confirm-type='search' bindconfirm='search'></input>
+            <input placeholder='搜索关键词以空格形式分开' placeholder-style='color: #bfbfbf;' confirm-type='search' bindconfirm='search' bindfocus='obtainInputFocus' bindinput='inputSearch'></input>
             <icon type='search' size='20' color='#bfbfbf'></icon>
+    </view>
+
+    <view class="search-history" style="height:{{system.windowHeight - 55}}px" animation='{{historyView.anim}}' hidden='{{!historyView.isShow}}' catchtouchmove="onReachBottom" bindtap='closeHistoryView'>
+        <view>
+            <view>搜索历史</view>
+            <scroll-view scroll-y='true' style="max-height:{{system.windowHeight*0.5}}px;">
+                <block wx:for="{{searchHistory}}">
+                    <view class="history-item" data-key='{{item}}' bindtap='clickHostoryItem'>{{item}}</view>
+                </block>
+            </scroll-view>
+        </view>
     </view>
 
     <view class="view-hot">热搜</view>
@@ -18,7 +29,7 @@
     </view>
 
     <view class="view-hotkey">
-        <view style="background-color: {{item.bcolor}}" wx:for="{{friends}}" wx:key="id" bindtap='clickHotKey' data-link="{{item.link}}" bindtap='clickWebItem'>
+        <view style="background-color: {{item.bcolor}}" wx:for="{{friends}}" wx:key="id" data-link="{{item.link}}" bindtap='clickWebItem'>
             {{item.name}}
         </view>
     </view>

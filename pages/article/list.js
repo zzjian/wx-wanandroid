@@ -1,14 +1,15 @@
 // pages/article/list/list.js
 const http = require('../../utils/http')
 const ui = require('../../utils/ui')
-var cid, page, loadMoreView, title, statusLayout
+var cid, page, loadMoreView, title, statusLayout, scenes
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    items:[]
+    items:[],
+    isCollectPage: false
   },
 
   /**
@@ -20,9 +21,13 @@ Page({
     statusLayout = this.selectComponent("#statusLayout")
     cid = options.cid
     title = options.title
+    scenes = options.scenes
     wx.setNavigationBarTitle({
       title: title
-  })
+    })
+    this.setData({
+      isCollectPage: scenes==='COLLECT'
+    })
     this.loadData()
   },
 
@@ -78,20 +83,28 @@ Page({
   },
   loadData: function() {
     
-    if(cid) {
+    if(scenes == 'COLLECT') {
       http.get({
-        url: `http://www.wanandroid.com/article/list/${page}/json?cid=${cid}`,
+        url: `http://www.wanandroid.com/lg/collect/list/${page}/json`,
         showLoading: false,
-        success: this.success
+        success: this.success,
+        fail: this.fail
       })
-    } else {
+    } else if(scenes == 'SEARCH') {
       http.post({
         url: `http://www.wanandroid.com/article/query/${page}/json?k=${title}`,
         showLoading: false,
-        success: this.success
+        success: this.success,
+        fail: this.fail
+      })
+    } else {
+      http.get({
+        url: `http://www.wanandroid.com/article/list/${page}/json?cid=${cid}`,
+        showLoading: false,
+        success: this.success,
+        fail: this.fail
       })
     }
-    
   },
   clickItem: function(e) {
     var link = this.data.items[e.currentTarget.id].link
@@ -112,6 +125,51 @@ Page({
     }
     this.setData({
       items: items
+    })
+  },
+  fail: ()=>{
+    statusLayout.showError()
+  },
+  reload: function(){
+    statusLayout.showLoading()
+    this.loadData()
+  },
+  collect: function(e){
+    var that = this
+    wx.getStorage({
+      key: 'username',
+      success: function(res){
+        that.handleCollect(that, e)
+      },
+      fail: function(e) {
+        ui.navigateTo(`../../pages/login/login`)
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+  handleCollect:(that, e)=> {
+    var id = that.data.isCollectPage?that.data.items[e.currentTarget.id].originId:that.data.items[e.currentTarget.id].id
+    var url=''
+    if(that.data.items[e.currentTarget.id].collect||that.data.isCollectPage) {
+      url = `http://www.wanandroid.com/lg/uncollect_originId/${id}/json`
+    } else {
+      url = `http://www.wanandroid.com/lg/collect/${id}/json`
+    }
+    http.post({
+      url: url,
+      success: (res)=> {
+        if(that.data.isCollectPage) {
+          that.data.items.splice(e.currentTarget.id, 1)
+        } else {
+          that.data.items[e.currentTarget.id].collect = !that.data.items[e.currentTarget.id].collect
+        }
+        that.setData({
+          items: that.data.items
+        })
+      }
+      
     })
   }
 })

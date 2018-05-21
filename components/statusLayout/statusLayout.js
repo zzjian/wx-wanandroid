@@ -133,6 +133,7 @@ Component({
       })
     },
     onClickListener: function(res) {
+      console.log(res)
       this.triggerEvent('OnClickListener', { status: this.data.status }, {})
     }
   }

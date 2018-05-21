@@ -2,10 +2,8 @@
 <view class="view-root">
     <block wx:for='{{treeList}}' wx:key="id">
         <view class="view-item" id="{{item.id}}" catchtap="openChildren">
-            <view>
-                <image src='../../img/pill.png'></image>
-                <view style="{{expandId==item.id?'color: #35A194':''}}"> {{item.name}}</view>
-            </view>
+            <image src="{{'../../img/icon'+ index + '.png'}}"></image>
+            <view style="{{expandId==item.id?'color: #35A194':''}}"> {{item.name}}</view>
             <image src="{{expandId!=item.id?'../../img/more_unfold.png':'../../img/less.png'}}"></image>
         </view>
         <view hidden="{{expandId!=item.id}}">
