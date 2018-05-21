@@ -2,7 +2,7 @@
 
 ## 介绍
 
-wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) 实现的微信小程序客户端, UI 大部分直接借鉴于 [官网](http://wanandroid.com) . 所有功能基本根据 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/) 提供的 API 实现, 该项目仅供学习使用。(持续完善中, 感兴趣的小伙伴不妨点个 star ~)
+wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) 实现的微信小程序客户端, UI 大部分直接借鉴于 [官网](http://wanandroid.com) . 所有功能基本根据 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/) 提供的 API 实现, 该项目仅供学习使用。(持续完善中, 感兴趣的小伙伴不妨点个 Star ~)
 
 ## 效果
 
@@ -30,7 +30,7 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 <img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%90%9C%E7%B4%A22.png"/>
 
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%90%9C%E7%B4%A22.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/70fcbde7e0e2458fe1138c7b6c234531f9635d00/preview/%E6%94%B6%E8%97%8F.png"/>
 <br/>
 
 <img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E5%B8%96%E5%AD%90.png"/>
@@ -44,8 +44,7 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 
 1. 先将项目 clone 到本地
 2. 使用小程序开发工具打开项目, 没有的点击 [这里](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) 下载安装
-3. 如果无法正常打开网页, 可以试着勾上 `<不校验合法域名...>` 然后重新编译。 -> 位于开发者工具右上角详情里
-### 使用
+3. 如果无法正常打开网页, 看下是否勾上 `<不校验合法域名...>` 然后重新编译。 -> 位于开发者工具右上角详情里
 
 
 ## License
