@@ -2,7 +2,7 @@
 
 ## 介绍
 
-wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) 实现的微信小程序客户端, UI 大部分直接借鉴于 [官网](http://wanandroid.com) . 所有功能基本根据 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/) 提供的 API 实现, 该项目仅供学习使用。(持续完善中, 感兴趣的小伙伴不妨点个 Star ~)
+wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) 实现的微信小程序客户端, UI 大部分直接借鉴于 [官网](http://wanandroid.com) . 所有功能基本根据 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/) 提供的 API 实现, 该项目仅供学习使用。(持续完善中, 感兴趣的小伙伴不妨点个 Star ~)
 
 ## 效果
 
