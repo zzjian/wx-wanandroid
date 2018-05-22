@@ -1,22 +1,48 @@
 <!--pages/login/login.wxml-->
 <view class='root view-root'>
-    <view class="view-content">
         <view>
-            <view class="view-title active">登录</view>
-            <view class="view-title">·</view>
-            <view class="view-title">注册</view>
+            <view id='0' class="view-title {{currentPage==0?'active':''}}" bindtap='switchSwiper'>登录</view>
+            <view id='1' class="view-title {{currentPage==1?'active':''}}" bindtap='switchSwiper'>注册</view>
         </view>
-        <form bindsubmit="formSubmit">
-                <view class="view-input input-top">
-                    <image src='../../img/username.png'></image>
-                    <input name='username' placeholder="用户名"></input>
-                </view>
-                <view class="view-input input-bottom">
-                        <image src='../../img/password.png'></image>
-                        <input name='password' placeholder="密码"></input>
-                </view>
-
-                <button form-type='submit'>登录</button>
-        </form>
-    </view>
+    
+        <swiper style="height: {{system.windowHeight-40}}px;" current="{{currentPage}}" bindchange='swiperChange'>
+                <swiper-item >
+                        <view class="view-content">
+                        <form bindsubmit="login">
+                                <view class="view-input input-top">
+                                    <image src='../../img/username.png'></image>
+                                    <input name='username' placeholder="用户名"></input>
+                                </view>
+                                <view class="view-input input-bottom">
+                                        <image src='../../img/password.png'></image>
+                                        <input name='password' placeholder="密码"></input>
+                                </view>
+                
+                                <button form-type='submit'>登录</button>
+                        </form>
+                    </view>
+                </swiper-item>
+                <swiper-item>
+                    <view class="view-content">
+                        <form bindsubmit="register">
+                                <view class="view-input input-top">
+                                    <image src='../../img/username.png'></image>
+                                    <input name='username' placeholder="用户名"></input>
+                                </view>
+                                <view class="view-input input-center">
+                                        <image src='../../img/password.png'></image>
+                                        <input name='password' placeholder="密码"></input>
+                                </view>
+                                <view class="view-input input-bottom">
+                                        <image src='../../img/password.png'></image>
+                                        <input name='confirmPassword' placeholder="请再次输入密码"></input>
+                                </view>
+                
+                                <button form-type='submit'>注册</button>
+                        </form>
+                    </view>
+                </swiper-item>
+        </swiper>
+        
+    
 </view>

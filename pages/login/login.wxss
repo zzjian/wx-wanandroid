@@ -1,22 +1,18 @@
 /* pages/login/login.wxss */
 .root {
-    display: flex; 
+    /* display: flex;  */
     justify-content: center; 
     align-items: center;
 }
 
 .view-content {
-    /* background-color: #fff; */
-    /* margin: 15px; */
-    /* box-shadow: 1px 1px 3px 0 rgba(0,0,0,.05); */
-    /* border: 1px solid #eee; */
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center;
+    height: 100%;
+    padding: 50px 20px;
 }
 
-.view-content > view {
+.root > view {
     display: flex;
     flex-direction: row;
 }
@@ -25,6 +21,8 @@
     padding-right: 8px;
     padding-bottom: 8px;
     font-size: 16px;
+    flex: 1;
+    text-align: center;
 }
 
 .active {
@@ -56,13 +54,12 @@
     border-bottom: none;
 }
 
-.input-bottom {
-    border-radius: 0 0 4px 4px;
+.input-center {
+    border-bottom: none;
 }
 
-form {
-    width: 80vw;
-    margin-top: 40px;
+.input-bottom {
+    border-radius: 0 0 4px 4px;
 }
 
 button {
@@ -70,4 +67,9 @@ button {
     background-color: #3194d0;
     color: #fff;
     font-size: 16px;
+}
+
+swiper {
+    width: 100vw;
+    height: 100%;
 }

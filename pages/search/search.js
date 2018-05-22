@@ -198,5 +198,8 @@ Page({
               'historyView.isShow': false
         })
     }.bind(this), 300)
+  },
+  catchTouchMove:()=>{
+    
   }
 })

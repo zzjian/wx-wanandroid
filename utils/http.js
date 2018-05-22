@@ -44,7 +44,7 @@ const request = function(method){
                     return
                 }
                 if(obj.success) {
-                    if (obj.obtainOriginalData) {
+                    if (obj.obtainResponse) {
                         obj.success(res)
                     } else {
                         obj.success(res.data.data)

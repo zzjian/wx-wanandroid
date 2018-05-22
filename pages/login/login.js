@@ -7,14 +7,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    system: {},
+    currentPage: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    wx.getSystemInfo({
+      success: function(res) {
+        that.setData({
+          system: res
+        })
+      }
+    })
   },
 
   /**
@@ -65,7 +73,21 @@ Page({
   onShareAppMessage: function () {
   
   },
-  formSubmit: function(e) {
+  switchSwiper: function(e) {
+    this.setData({
+      currentPage: e.currentTarget.id
+    })
+  },
+  swiperChange: function(e) {
+    if(e.detail.current == this.data.currentPage) return
+    setTimeout(function(){
+      this.setData({
+        currentPage: e.detail.current
+      })
+    }.bind(this), 300)
+    
+  },
+  login: function(e) {
     var username = e.detail.value.username;
     var password = e.detail.value.password;
     
@@ -80,7 +102,7 @@ Page({
 
     http.post({
       url: `http://www.wanandroid.com/user/login?username=${username}&password=${password}`,
-      obtainOriginalData: true,
+      obtainResponse: true,
       success: (res) => {
           wx.setStorage({
             key: "username",
@@ -94,6 +116,56 @@ Page({
                 delta: 1, // 回退前 delta(默认为1) 页面
                 success: function(res){
                   ui.showToast('登录成功')
+                },
+                fail: function() {
+                  // fail
+                },
+                complete: function() {
+                  // complete
+                }
+              })
+            }
+          })
+      }
+    })
+  },
+  register: function(e) {
+    var username = e.detail.value.username;
+    var password = e.detail.value.password;
+    var confirmPassword = e.detail.value.confirmPassword;
+    if(!username||username.length==0) {
+      ui.showToast('请输入用户名!')
+      return
+    }
+    if(!password||password.length==0) {
+      ui.showToast('请输入密码!')
+      return
+    }
+    if(!confirmPassword||confirmPassword.length==0) {
+      ui.showToast('请再次输入密码!')
+      return
+    }
+    if(password != confirmPassword) {
+      ui.showToast('两次密码不一致!')
+      return
+    }
+
+    http.post({
+      url: `http://www.wanandroid.com/user/register?username=${username}&password=${password}&repassword=${confirmPassword}`,
+      obtainResponse: true,
+      success: (res) => {
+          wx.setStorage({
+            key: "username",
+            data: username
+          })
+          wx.setStorage({
+            key: "cookie",
+            data: res.header['Set-Cookie'],
+            success: ()=>{
+              wx.navigateBack({
+                delta: 1, // 回退前 delta(默认为1) 页面
+                success: function(res){
+                  ui.showToast('注册成功')
                 },
                 fail: function() {
                   // fail

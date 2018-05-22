@@ -5,11 +5,13 @@
     border-radius: 5px;
     display: flex;
     margin: 15px 15px 0px 15px;
-    padding: 6px 15px;
+    padding: 0px 15px;
+    height: 40px;
 }
 
 .view-search input{
     flex: 1;
+    align-self: center
 }
 
 .view-search icon{
