@@ -37,12 +37,8 @@ Page({
     http.get({
       url: `http://www.wanandroid.com/banner/json`,
       success:(res)=>{
-          var indicatorDots = false
-          if(res.length > 1) {
-            indicatorDots = true
-          }
           that.setData({
-            indicatorDots : indicatorDots,
+            indicatorDots : res.length > 1,
             ads: res
           })
         }
@@ -129,5 +125,9 @@ Page({
   clickItem: function(e) {
     var link = this.data.items[e.currentTarget.id].link
     ui.navigateTo(`../../pages/detail/detail?link=${link}`)
+  },
+  clickAdItem: function(e) {
+    var url = e.currentTarget.dataset.url
+    ui.navigateTo(`../../pages/detail/detail?link=${url}`)
   }
 })

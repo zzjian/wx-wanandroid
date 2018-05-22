@@ -29,28 +29,23 @@
 
 .view-item{
   border-bottom: 0.6px solid #e4e4e4;
-  display: flex;
-  justify-content: flex-start;
+  /* display: flex; */
+  /* justify-content: flex-start; */
   padding: 15px;
 }
 
-
-.view-item-left{
-  display:block;
-}
-
-.view-item-left view:first-child{
+.view-item view:first-child{
   font-weight: bold;
   margin-bottom: 5px;
   font-size: 15px;
 }
 
-.view-item-left view:nth-child(2){
+.view-item view:nth-child(2){
   color: #545C63;
   margin-bottom: 5px;
 }
 
-.view-item-left view:nth-child(3){
+.view-item view:nth-child(3){
   display: flex;
   color: #999;
 }
