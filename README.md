@@ -7,35 +7,35 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 ## 效果
 
 <div>
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E9%A6%96%E9%A1%B5.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E9%A6%96%E9%A1%B5.png"/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E9%A6%96%E9%A1%B52.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E9%A6%96%E9%A1%B52.png"/>
 
 <br/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E5%AF%BC%E8%88%AA.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E5%AF%BC%E8%88%AA.png"/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E4%BD%93%E7%B3%BB.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E4%BD%93%E7%B3%BB.png"/>
 <br/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E9%A1%B9%E7%9B%AE.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E9%A1%B9%E7%9B%AE.png"/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%88%91%E7%9A%84.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E6%88%91%E7%9A%84.png"/>
 <br/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E7%99%BB%E5%BD%95.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E7%99%BB%E5%BD%95.png"/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%90%9C%E7%B4%A2.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E6%90%9C%E7%B4%A2.png"/>
 <br/>
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E6%90%9C%E7%B4%A22.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E6%90%9C%E7%B4%A22.png"/>
 
 
 <img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/70fcbde7e0e2458fe1138c7b6c234531f9635d00/preview/%E6%94%B6%E8%97%8F.png"/>
 <br/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E5%B8%96%E5%AD%90.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E5%B8%96%E5%AD%90.png"/>
 
-<img width="270" height="480" src="https://raw.githubusercontent.com/zzjian/wx-wanandroid/d86e5fbfd2e0724b1e797575ebe3d2c8ddcadd1d/preview/%E8%AF%A6%E6%83%85.png"/>
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E8%AF%A6%E6%83%85.png"/>
 </div>
 
 
