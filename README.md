@@ -56,7 +56,7 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 - [ ] 处理 webview 外链问题
 
 ## License
-    Copyright [2018] [zzjian]
+    Copyright 2018 zzjian
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
