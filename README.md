@@ -48,7 +48,7 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 
 ### todolist
 - [x] ~~大部分功能及 ui 2018-05-21~~
-- [x] ~~完善登录注册功能模块 2018-05-22~~
+- [x] ~~完善登录注册功能模块 2018-05-22~~
 - [ ] 细节优化
 - [ ] 完善加载更多组件
 - [ ] 添加下拉刷新功能
