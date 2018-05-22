@@ -3,8 +3,9 @@
 .view-loadmore {
     height: 35px;
     width: 100%;
-    display: block;
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .view-loadmore text{

@@ -5,7 +5,7 @@
             <icon type='search' size='20' color='#bfbfbf'></icon>
     </view>
 
-    <view class="search-history" style="height:{{system.windowHeight - 55}}px" animation='{{historyView.anim}}' hidden='{{!historyView.isShow}}' catchtouchmove="catchTouchMove" bindtap='closeHistoryView'>
+    <view class="search-history" style="height:{{system.windowHeight - 57}}px" animation='{{historyView.anim}}' hidden='{{!historyView.isShow}}' catchtouchmove="catchTouchMove" bindtap='closeHistoryView'>
         <view>
             <view>搜索历史</view>
             <scroll-view scroll-y='true' style="max-height:{{system.windowHeight*0.5}}px;">
