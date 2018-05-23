@@ -1,24 +1,27 @@
 /* components/loadMoreView/index.wxss */
 
-.view-loadmore {
+.loadmore {
     height: 35px;
     width: 100%;
     display: block;
     display: flex; justify-content: center; align-items: center;
   }
   
-  .view-loadmore text{
+  .loadmore text{
     font-size: 13px;
     color: #bfbfbf;
     font-weight: bold;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   
-  .image-loadmore{
-    animation: weuiLoading 0.6s steps(12, end) infinite;
+  .icon{
     width: 25px;
     height: 25px;
     margin-right: 10px;
+  }
+
+  .active {
+    animation: weuiLoading 0.6s steps(12, end) infinite;
   }
 
   @keyframes weuiLoading {

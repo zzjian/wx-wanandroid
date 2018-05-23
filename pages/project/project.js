@@ -62,9 +62,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(!loadMoreView.hasMore())return
-    page += 1
-    this.loadData(this.data.selectedView)
+    loadMoreView.loadMore()
   },
 
   /**
@@ -79,7 +77,6 @@ Page({
       url: `http://www.wanandroid.com/project/list/${page}/json?cid=294`,
       showLoading: page == 0,
       success: (res)=>{
-        loadMoreView.loadFinish(res)
         var items = that.data.items
         if(page == 0) {
           items = res.datas
@@ -89,8 +86,16 @@ Page({
         that.setData({
           items: items
         })
+        loadMoreView.loadMoreComplete(res)
       }
     })
+  },
+  loadMoreListener: function(e) {
+    page += 1
+    this.loadData()
+  },
+  clickLoadMore: function(e) {
+    this.loadData()
   },
   clickItem: function(e) {
     var link = this.data.items[e.currentTarget.id].link

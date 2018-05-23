@@ -70,9 +70,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(!loadMoreView.hasMore())return
-    page += 1
-    this.loadData()
+    loadMoreView.loadMore()
+    // if(!loadMoreView.hasMore())return
+    
   },
 
   /**
@@ -111,7 +111,6 @@ Page({
     ui.navigateTo(`../../pages/detail/detail?link=${link}`)
   },
   success: function(res) {
-    loadMoreView.loadFinish(res)
     var items = this.data.items
     if(page == 0) {
       items = res.datas
@@ -126,9 +125,17 @@ Page({
     this.setData({
       items: items
     })
+    loadMoreView.loadMoreComplete(res)
   },
   fail: ()=>{
-    statusLayout.showError()
+    page==0 ? statusLayout.showError() : loadMoreView.loadMoreFail()
+  },
+  loadMoreListener: function(e) {
+    page += 1
+    this.loadData()
+  },
+  clickLoadMore: function(e) {
+    this.loadData()
   },
   reload: function(){
     statusLayout.showLoading()

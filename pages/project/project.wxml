@@ -9,5 +9,5 @@
             <view>{{item.niceDate}} {{item.author}}</view>
         </view>
     </view>
-    <loadMoreView id="loadMoreView"></loadMoreView>
+    <load-more id="loadMoreView" bindloadMoreListener='loadMoreListener' bindclickLoadMore='clickLoadMore'></load-more>
 </view>
