@@ -1,4 +1,4 @@
-/* components/loadMoreView/index.wxss */
+/* components/load-more/index.wxss */
 
 .loadmore {
     height: 35px;

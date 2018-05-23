@@ -1,4 +1,4 @@
-// components/loadMoreView/index.js
+// components/load-more/index.js
 Component({
   /**
    * 组件的属性列表
@@ -23,7 +23,8 @@ Component({
         type: String,
         value: ''
       },
-      // 列表渲染延时, 在开发工具中测试列表渲染速度时快时慢, 默认为 500 ms, 可根据实际使用中界面复杂度自行调整 
+      // 列表渲染延时, 默认为 500 ms, 我在开发工具中测试列表渲染速度时快时慢, 可根据实际使用中界面复杂度自行调整
+      // ps 如果能监听setData() 渲染结束的话则可以不需要延时 
       listRenderingDelay: {
         type: Number,
         value: 500
