@@ -8,7 +8,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    items: []
+    selectCategory: {},
+    categories:[],
+    expandView: {
+      isShow: false,
+      anim: {},
+      expandAnim: {},
+      rotateAnim: {}
+    },
+    items: [],
+    system: {}
   },
 
   /**
@@ -20,61 +29,47 @@ Page({
       title: "项目"
     })
     loadMoreView = this.selectComponent("#loadMoreView")
-    this.loadData()
+    var that = this
+
+
+    http.get({
+      url: `http://www.wanandroid.com/project/tree/json`,
+      success: (res)=>{
+        that.setData({
+          categories: res,
+          selectCategory: res[0]
+        })
+        this.loadData()
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    var that = this
+    setTimeout(function(){
+      // 延迟获取是为了解决真机上 windowHeight 值不对的问题
+      wx.getSystemInfo({
+        success: function(res) {
+          console.log(res)
+          that.setData({
+            system: res
+          })
+        },
+      })
+    }, 500)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
+  _onScrollToLower: function () {
     loadMoreView.loadMore()
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   loadData: function() {
     var that = this
     http.get({
-      url: `http://www.wanandroid.com/project/list/${page}/json?cid=294`,
+      url: `http://www.wanandroid.com/project/list/${page}/json?cid=${that.data.selectCategory.id}`,
       showLoading: page == 0,
       success: (res)=>{
         var items = that.data.items
@@ -100,6 +95,72 @@ Page({
   clickItem: function(e) {
     var link = this.data.items[e.currentTarget.id].link
     ui.navigateTo(`../../pages/detail/detail?link=${link}`)
-  }
+  },
+  switchCategory: function(e) {
+    this.setData({
+      selectCategory: e.currentTarget.dataset.category
+    })
+    page = 0 
+    this.loadData()
+  },
+  expandCategory: function(e) {
+    if(this.data.expandView.isShow) {
+      this.closeExpandView()
+      return
+    }
+    this.setData({
+      'expandView.isShow': true
+    })
+    var bgAnim = wx.createAnimation({
+        duration: 300,
+        timingFunction: "ease-out"
+    })
+    bgAnim.opacity(1).step()
 
+    var expandAnim = wx.createAnimation({
+      duration: 300,
+      timingFunction: "ease-out"
+    })
+    expandAnim.height(this.data.system.windowHeight*0.5).step()
+
+    var rotateAnim = wx.createAnimation({
+      duration: 300,
+      timingFunction: "ease-out"
+    })
+    rotateAnim.rotate(-180).step()
+
+    setTimeout(function () {
+        this.setData({
+            'expandView.anim': bgAnim.export(),
+            'expandView.expandAnim': expandAnim.export(),
+            'expandView.rotateAnim': rotateAnim.export()
+        })
+    }.bind(this), 100)
+  },
+  closeExpandView: function(e) {
+    var expandAnim = wx.createAnimation({
+      duration: 300,
+      timingFunction: "ease-out"
+    })
+    expandAnim.height(0).step()
+
+    var anim = wx.createAnimation({
+      duration: 300,
+      timingFunction: "ease-out"
+    })
+    anim.opacity(0).step()
+
+    var rotateAnim = wx.createAnimation({
+      duration: 300,
+      timingFunction: "ease-out"
+    })
+    rotateAnim.rotate(0).step()
+
+    this.setData({'expandView.anim': anim.export(),'expandView.expandAnim': expandAnim.export(),'expandView.rotateAnim': rotateAnim.export()})
+    setTimeout(function () {
+        this.setData({
+              'expandView.isShow': false
+        })
+    }.bind(this), 300)
+  }
 })

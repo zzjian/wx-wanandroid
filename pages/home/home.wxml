@@ -9,7 +9,7 @@
   </block>
   </swiper>
 
-  <view class='view-title'>
+  <view class="view-title {{float?'float':''}}">
       <text class="{{selectedView=='article'?'title-select':'title-default'}}" id="article" bindtap="switchView">最新博文</text>
       <view>|</view>
       <text class="{{selectedView=='project'?'title-select':'title-default'}}" id="project" bindtap="switchView">最新项目</text>

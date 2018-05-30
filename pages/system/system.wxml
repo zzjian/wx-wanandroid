@@ -1,15 +1,17 @@
 <!--pages/system/system.wxml-->
 <view class="view-root">
-    <block wx:for='{{treeList}}' wx:key="id">
-        <view class="view-item" id="{{item.id}}" catchtap="openChildren">
-            <image src="{{'../../img/icon'+ index + '.png'}}"></image>
-            <view style="{{expandId==item.id?'color: #35A194':''}}"> {{item.name}}</view>
-            <image src="{{expandId!=item.id?'../../img/more_unfold.png':'../../img/less.png'}}"></image>
-        </view>
-        <view hidden="{{expandId!=item.id}}">
-            <block wx:for='{{item.children}}' wx:key="id" wx:for-item="child">
-                <view id="{{child.id}}"  data-title="{{child.name}}" class="view-children" style="{{index==item.children.length-1?'border-bottom: 1px solid #e2e2e2;':''}}" bindtap="clickChildItem">{{child.name}}</view>
-            </block>
-        </view>
-    </block>
+    <statusLayout id="statusLayout" status='LOADING' bindOnClickListener='reload'>
+        <block wx:for='{{treeList}}' wx:key="id">
+            <view class="view-item" id="{{item.id}}" catchtap="openChildren">
+                <image src="{{'../../img/icon'+ index + '.png'}}"></image>
+                <view style="{{expandId==item.id?'color: #35A194':''}}"> {{item.name}}</view>
+                <image src="{{expandId!=item.id?'../../img/more_unfold.png':'../../img/less.png'}}"></image>
+            </view>
+            <view hidden="{{expandId!=item.id}}">
+                <block wx:for='{{item.children}}' wx:key="id" wx:for-item="child">
+                    <view id="{{child.id}}"  data-title="{{child.name}}" class="view-children" style="{{index==item.children.length-1?'border-bottom: 1px solid #e2e2e2;':''}}" bindtap="clickChildItem">{{child.name}}</view>
+                </block>
+            </view>
+        </block>
+    </statusLayout>
 </view>

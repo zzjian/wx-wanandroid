@@ -1,6 +1,7 @@
 // pages/system/system.js
 const http = require('../../utils/http')
 const ui = require('../../utils/ui')
+var statusLayout
 Page({
 
   /**
@@ -15,17 +16,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    statusLayout = this.selectComponent("#statusLayout")
+
     wx.setNavigationBarTitle({
       title: "体系"
     })
     var that = this
     http.get({
       url: `http://www.wanandroid.com/tree/json`,
+      showLoading: false,
       success: (res) => {
           that.setData({
             treeList: res
           })
-      }
+          statusLayout.showContent()
+        },
+        fail: ()=> {
+          statusLayout.showError()
+        }
     })
   },
 
@@ -36,47 +44,6 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   openChildren: function(e) {
     this.setData({
       expandId: this.data.expandId == e.currentTarget.id ? -1: e.currentTarget.id
@@ -84,5 +51,9 @@ Page({
   },
   clickChildItem: function(e) {
     ui.navigateTo(`../../pages/article/list?cid=${e.currentTarget.id}&title=${e.currentTarget.dataset.title}`)
+  },
+  reload: function(){
+    statusLayout.showLoading()
+    this.loadData()
   }
 })

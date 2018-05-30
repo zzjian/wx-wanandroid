@@ -2,16 +2,21 @@
 
 
 .view-title{
-  /* padding-top: 5px; */
-  /* padding-bottom: 5px; */
   padding-left: 10px;
-  
   border-top: 1px solid #e2e2e2;
   border-bottom: 1px solid #8DB5D0;
   height: 35px;
   display: flex;
   line-height: 35px;
   flex: 1;
+  width: 100%;
+  background-color: #fff
+}
+
+.float {
+  position: fixed;
+  /* float: top; */
+  top: 0px;
 }
 
 .title-select{

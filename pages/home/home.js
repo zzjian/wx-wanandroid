@@ -12,7 +12,8 @@ Page({
     ads: [],
     system: {},
     items:[],
-    selectedView: 'article'
+    selectedView: 'article',
+    float: false
   },
 
   /**
@@ -34,17 +35,8 @@ Page({
       },
     })
       
-    http.get({
-      url: `http://www.wanandroid.com/banner/json`,
-      success:(res)=>{
-          that.setData({
-            indicatorDots : res.length > 1,
-            ads: res
-          })
-        }
-    })
-    
-    this.loadData('article')
+    this.loadBanner()
+    this.loadData('article', true)
   },
 
   /**
@@ -79,7 +71,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    page = 0
+    this.loadBanner()
+    this.loadData(this.data.selectedView, false)
   },
 
   /**
@@ -89,25 +83,45 @@ Page({
     loadMoreView.loadMore()
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  onPageScroll: function(e) {
+    console.log(e)
+    if(e.scrollTop >= this.data.system.windowWidth/9*5 && !this.data.float) {
+        this.setData({
+          float: true
+        })
+    } else if (e.scrollTop < this.data.system.windowWidth/9*5 && this.data.float) {
+      this.setData({
+        float: false
+      })
+    }
   },
   switchView: function(e) {
     page = 0
-    this.loadData(e.target.id)
+    this.loadData(e.target.id, true)
   },
-  loadData: function(viewType) {
+  loadBanner: function() {
+    var that = this
+    http.get({
+      url: `http://www.wanandroid.com/banner/json`,
+      showLoading: false,
+      success:(res)=>{
+          that.setData({
+            indicatorDots : res.length > 1,
+            ads: res
+          })
+        }
+    })
+  },
+  loadData: function(viewType, showLoading) {
     var that = this
     http.get({
       url: `http://www.wanandroid.com/${viewType}/list/${page}/json`,
-      showLoading: page == 0,
+      showLoading: showLoading,
       success: (res)=>{
           var items = that.data.items
           if(page == 0) {
             items = res.datas
+            wx.stopPullDownRefresh()
           } else {
             items = items.concat(res.datas)
           }
@@ -126,10 +140,10 @@ Page({
   },
   loadMoreListener: function(e) {
     page += 1
-    this.loadData(this.data.selectedView)
+    this.loadData(this.data.selectedView, false)
   },
   clickLoadMore: function(e) {
-    this.loadData(this.data.selectedView)
+    this.loadData(this.data.selectedView, false)
   },
   clickItem: function(e) {
     var link = this.data.items[e.currentTarget.id].link

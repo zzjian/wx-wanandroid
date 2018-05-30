@@ -1,13 +1,28 @@
 <!--pages/project/project.wxml-->
 <view class="view-root">
-    <view id='{{index}}' class="view-item" wx:for="{{items}}" wx:key="id"  data-link="{{item.link}}" bindtap='clickItem'>
-        <image src='{{item.envelopePic}}' lazy-load='{{true}}}'/>
-        <view class="view-right">
-            <view class="active">{{item.title}}</view>
-            <view>{{item.desc}}</view>
-            <view></view>
-            <view>{{item.niceDate}} {{item.author}}</view>
-        </view>
+    <view class="header" bindtap='expandCategory'>
+        <view>{{selectCategory.name}}</view>
+        <image src="../../img/more_unfold.png" animation='{{expandView.rotateAnim}}'></image>
     </view>
-    <load-more id="loadMoreView" bindloadMoreListener='loadMoreListener' bindclickLoadMore='clickLoadMore'></load-more>
+
+    <view class="view-category" style="height:{{system.windowHeight - 52}}px" animation='{{expandView.anim}}' hidden='{{!expandView.isShow}}' catchtouchmove="catchTouchMove" bindtap='closeExpandView'>
+        <scroll-view scroll-y='true' style="max-height:{{system.windowHeight*0.5}}px;height: 0px;" animation='{{expandView.expandAnim}}'>
+            <block wx:for="{{categories}}">
+                <view class="category-item" data-category='{{item}}' bindtap='switchCategory' hidden='{{item.id==selectCategory.id}}'>{{item.name}}</view>
+            </block>
+        </scroll-view>
+    </view>
+
+    <scroll-view scroll-y style="height: {{system.windowHeight - 67}}px; margin-top: 15px;" bindscrolltolower='_onScrollToLower'>
+        <view id='{{index}}' class="view-item" style="{{index==0?'margin-top: 0px':''}}" wx:for="{{items}}" wx:key="id"  data-link="{{item.link}}" bindtap='clickItem'>
+            <image src='{{item.envelopePic}}' lazy-load='{{true}}}'/>
+            <view class="view-right">
+                <view class="active">{{item.title}}</view>
+                <view>{{item.desc}}</view>
+                <view></view>
+                <view>{{item.niceDate}} {{item.author}}</view>
+            </view>
+        </view>
+        <load-more id="loadMoreView" bindloadMoreListener='loadMoreListener' bindclickLoadMore='clickLoadMore'></load-more>
+    </scroll-view>
 </view>

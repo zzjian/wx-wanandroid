@@ -63,7 +63,7 @@ Component({
     },
     //加载完成, 传入hasMore 
     loadMoreComplete: function(data) {
-        var hasMore = data.curPage < data.pageCount
+        var hasMore = data.curPage < data.pageCount && data.pageCount != 1
         var text = '', showThis = false, showIcon = false
 
         if (hasMore) {
@@ -74,15 +74,16 @@ Component({
           text = this.properties.finishText
           showThis = true
         }
-
+        this.setData({
+          hasMore: hasMore,
+          text: text,
+          showIcon: showIcon,
+          showThis: showThis
+        })
         //界面渲染延迟, 避免列表还未渲染完成就再次触发 loadMore 方法
         setTimeout(function(){
           this.setData({
-            isLoading: false,
-            hasMore: hasMore,
-            text: text,
-            showIcon: showIcon,
-            showThis: showThis
+            isLoading: false
           })
         }.bind(this), 500)
     },

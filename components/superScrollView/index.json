@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-        "loadMoreView":"../loadMoreView/index"
+        "load-more":"../load-more/index"
     }
 }

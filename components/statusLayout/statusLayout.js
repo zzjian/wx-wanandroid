@@ -133,7 +133,7 @@ Component({
       })
     },
     onClickListener: function(res) {
-      console.log(res)
+      if(this.data.status == 'LOADING') return      
       this.triggerEvent('OnClickListener', { status: this.data.status }, {})
     }
   }

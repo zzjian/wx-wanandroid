@@ -1,6 +1,8 @@
 // pages/navigation/navigation.js
 const http = require('../../utils/http')
 const ui = require('../../utils/ui')
+
+var statusLayout
 Page({
 
   /**
@@ -14,6 +16,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    statusLayout = this.selectComponent("#statusLayout")
+
     wx.setNavigationBarTitle({
       title: "导航"
     })
@@ -27,55 +32,19 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   loadData: function() {
     var that = this
     http.get({
       url: `http://www.wanandroid.com/navi/json`,
+      showLoading: false,
       success: (res)=>{
         that.setData({
           items: res
         })
+        statusLayout.showContent()
+      },
+      fail: ()=> {
+        statusLayout.showError()
       }
     })
   },
@@ -85,6 +54,9 @@ Page({
   },
   search: function() {
     ui.navigateTo(`../../pages/search/search`)
+  },
+  reload: function(){
+    statusLayout.showLoading()
+    this.loadData()
   }
-
 })
