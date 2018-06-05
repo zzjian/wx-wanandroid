@@ -46,11 +46,15 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 2. 使用小程序开发工具打开项目, 没有的点击 [这里](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) 下载安装
 3. 如果无法正常打开网页, 看下是否勾上 `<不校验合法域名...>` 然后重新编译。 -> 位于开发者工具右上角详情里
 
+### `突然发现在手机上使用只要打开调试就好了`
+想体检的可以在 issue 中留下你的微信号，我给你添加体验权限即可 `< 剩余名额 15 >`
+
+你也可以自己在 [微信公众平台](https://mp.weixin.qq.com) 申请小程序然后上传代码体检即可, 最好可以共享下体验名额哦
 ### todolist
 - [x] ~~大部分功能及 ui 2018-05-21~~
 - [x] ~~完善登录注册功能模块 2018-05-22~~
+- [x] 完善加载更多组件 2018-05-28~~
 - [ ] 细节优化
-- [ ] 完善加载更多组件
 - [ ] 添加下拉刷新功能
 - [ ] https
 - [ ] 处理 webview 外链问题
