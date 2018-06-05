@@ -5,7 +5,10 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
  所有功能基本根据 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/) 提供的 API 实现, 对小程序感兴趣的同学不妨拿这个项目练练手。项目仅供学习使用, 请勿用作其它用途！(持续完善中, 感兴趣的小伙伴不妨点个 Star ~)
 
 ## 效果
+### gif
+<img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/gif.gif"/>
 
+### 截图
 <div>
 <img width="270" height="480" src="https://raw.githubusercontent.com/wiki/zzjian/wx-wanandroid/preview/%E9%A6%96%E9%A1%B5.png"/>
 
