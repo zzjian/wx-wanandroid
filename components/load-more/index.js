@@ -85,7 +85,7 @@ Component({
           this.setData({
             isLoading: false
           })
-        }.bind(this), 500)
+        }.bind(this), this.properties.listRenderingDelay)
     },
     // 加载失败
     loadMoreFail: function() {
@@ -99,7 +99,7 @@ Component({
         this.setData({
           isLoading: false
         })
-      }.bind(this), 500)
+      }.bind(this), this.properties.listRenderingDelay)
     },
     //点击 loadmore 控件时触发, 只有加载失败时才会进入页面回调方法
     clickLoadMore: function() {
