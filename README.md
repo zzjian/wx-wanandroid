@@ -52,7 +52,7 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 ### `突然发现在手机上使用只要打开调试就好了`
 想体检的可以在 issues 中留下你的微信号，我给你添加体验权限即可 `名额有限, 只能有15个`
 
-你也可以自己在 [微信公众平台](https://mp.weixin.qq.com) 申请小程序 appid 然后上传代码体检即可, 最好可以在 issues 共享下你的体验名额哦
+你也可以自己在 [微信公众平台](https://mp.weixin.qq.com) 申请小程序 appid 然后上传代码体检即可
 
 ### todolist
 - [x] ~~大部分功能及 ui 2018-05-21~~
