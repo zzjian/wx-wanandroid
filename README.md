@@ -60,7 +60,7 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 - [x] ~~完善加载更多组件 2018-05-28~~
 - [ ] 细节优化
 - [ ] 添加下拉刷新功能
-- [ ] https
+- [x] https 2019-03-13~~
 - [ ] 处理 webview 外链问题
 
 ## License
