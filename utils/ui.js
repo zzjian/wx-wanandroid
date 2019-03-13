@@ -44,3 +44,18 @@ export const navigateTo = (url)=>{
     })
     setTimeout(()=>{isClick = false},500)
 }
+
+
+export const toDetail = (url)=>{
+  wx.setClipboardData({
+    data: url,
+    success(res) {
+      wx.getClipboardData({
+        success(res) {
+          showToast('链接已复制，请在浏览器中打开')
+        }
+      })
+    }
+  })
+  //  navigateTo(`../../pages/detail/detail?link=${url}`)
+}

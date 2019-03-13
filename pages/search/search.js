@@ -143,7 +143,8 @@ Page({
   },
   clickWebItem: function(e) {
     var link = e.currentTarget.dataset.link
-    ui.navigateTo(`../../pages/detail/detail?link=${link}`)
+    ui.toDetail(link)
+    // ui.navigateTo(`../../pages/detail/detail?link=${link}`)
   },
   clickHostoryItem: function(e) {
     this.saveSearchHistory(e.currentTarget.dataset.key)

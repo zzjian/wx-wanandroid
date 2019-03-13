@@ -50,7 +50,8 @@ Page({
   },
   clickItem: function(e) {
     var link = e.currentTarget.dataset.link
-    ui.navigateTo(`../../pages/detail/detail?link=${link}`)
+    ui.toDetail(link)
+    // ui.navigateTo(`../../pages/detail/detail?link=${link}`)
   },
   search: function() {
     ui.navigateTo(`../../pages/search/search`)

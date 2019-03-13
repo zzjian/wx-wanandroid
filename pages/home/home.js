@@ -147,10 +147,12 @@ Page({
   },
   clickItem: function(e) {
     var link = this.data.items[e.currentTarget.id].link
-    ui.navigateTo(`../../pages/detail/detail?link=${link}`)
+    ui.toDetail(link)
+    // ui.navigateTo(`../../pages/detail/detail?link=${link}`)
   },
   clickAdItem: function(e) {
     var url = e.currentTarget.dataset.url
-    ui.navigateTo(`../../pages/detail/detail?link=${url}`)
+    ui.toDetail(url)
+    // ui.navigateTo(`../../pages/detail/detail?link=${url}`)
   }
 })

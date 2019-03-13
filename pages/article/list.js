@@ -108,7 +108,8 @@ Page({
   },
   clickItem: function(e) {
     var link = this.data.items[e.currentTarget.id].link
-    ui.navigateTo(`../../pages/detail/detail?link=${link}`)
+    ui.toDetail(link)
+    // ui.navigateTo(`../../pages/detail/detail?link=${link}`)
   },
   success: function(res) {
     var items = this.data.items
