@@ -101,7 +101,7 @@ Page({
     }
 
     http.post({
-      url: `http://www.wanandroid.com/user/login?username=${username}&password=${password}`,
+      url: `/user/login?username=${username}&password=${password}`,
       obtainResponse: true,
       success: (res) => {
           wx.setStorage({
@@ -151,7 +151,7 @@ Page({
     }
 
     http.post({
-      url: `http://www.wanandroid.com/user/register?username=${username}&password=${password}&repassword=${confirmPassword}`,
+      url: `/user/register?username=${username}&password=${password}&repassword=${confirmPassword}`,
       obtainResponse: true,
       success: (res) => {
           wx.setStorage({

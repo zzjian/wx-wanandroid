@@ -35,7 +35,7 @@ Page({
   loadData: function() {
     var that = this
     http.get({
-      url: `http://www.wanandroid.com/navi/json`,
+      url: `/navi/json`,
       showLoading: false,
       success: (res)=>{
         that.setData({

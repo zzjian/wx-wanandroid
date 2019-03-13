@@ -1,4 +1,5 @@
 const ui = require('../utils/ui')
+const base_url = 'https://www.wanandroid.com'
 
 const request = function(method){
 
@@ -14,6 +15,9 @@ const request = function(method){
         if(obj.data) data = obj.data
         var header = {'content-type': 'application/json'}
 
+      if (!obj.url.startsWith('http')){
+        obj.url = base_url + obj.url
+      }
         try {
             var value = wx.getStorageSync('cookie')
             if (value) {

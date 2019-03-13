@@ -23,7 +23,7 @@ Page({
     })
     var that = this
     http.get({
-      url: `http://www.wanandroid.com/tree/json`,
+      url: `/tree/json`,
       showLoading: false,
       success: (res) => {
           that.setData({

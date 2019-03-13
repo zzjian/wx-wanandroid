@@ -82,7 +82,7 @@ Page({
   
   },
   clickAboutus: function() {
-    ui.navigateTo(`../../pages/detail/detail?link=http://wanandroid.com/about`)
+    ui.navigateTo(`../../pages/detail/detail?link=https://wanandroid.com/about`)
   },
   toLogin: function() {
     if(this.data.username != '未登录') return

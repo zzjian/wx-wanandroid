@@ -33,7 +33,7 @@ Page({
 
 
     http.get({
-      url: `http://www.wanandroid.com/project/tree/json`,
+      url: `/project/tree/json`,
       success: (res)=>{
         that.setData({
           categories: res,
@@ -69,7 +69,7 @@ Page({
   loadData: function() {
     var that = this
     http.get({
-      url: `http://www.wanandroid.com/project/list/${page}/json?cid=${that.data.selectCategory.id}`,
+      url: `/project/list/${page}/json?cid=${that.data.selectCategory.id}`,
       showLoading: page == 0,
       success: (res)=>{
         var items = that.data.items

@@ -102,7 +102,7 @@ Page({
   loadBanner: function() {
     var that = this
     http.get({
-      url: `http://www.wanandroid.com/banner/json`,
+      url: `/banner/json`,
       showLoading: false,
       success:(res)=>{
           that.setData({
@@ -115,7 +115,7 @@ Page({
   loadData: function(viewType, showLoading) {
     var that = this
     http.get({
-      url: `http://www.wanandroid.com/${viewType}/list/${page}/json`,
+      url: `/${viewType}/list/${page}/json`,
       showLoading: showLoading,
       success: (res)=>{
           var items = that.data.items

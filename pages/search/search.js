@@ -106,7 +106,7 @@ Page({
   loadHotkey: function() {
     var that = this
     http.get({
-      url: `http://www.wanandroid.com//hotkey/json`,
+      url: `/hotkey/json`,
       success: (res)=>{
         res.forEach(item => {
           item.bcolor = that.data.colors[parseInt(Math.random()*10)]
@@ -120,7 +120,7 @@ Page({
   loadFriend: function() {
     var that = this
     http.get({
-      url: `http://www.wanandroid.com/friend/json`,
+      url: `/friend/json`,
       success: (res)=>{
         res.splice(0, 1)
         res.forEach(item => {

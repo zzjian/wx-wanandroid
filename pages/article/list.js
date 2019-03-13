@@ -85,21 +85,21 @@ Page({
     
     if(scenes == 'COLLECT') {
       http.get({
-        url: `http://www.wanandroid.com/lg/collect/list/${page}/json`,
+        url: `/lg/collect/list/${page}/json`,
         showLoading: false,
         success: this.success,
         fail: this.fail
       })
     } else if(scenes == 'SEARCH') {
       http.post({
-        url: `http://www.wanandroid.com/article/query/${page}/json?k=${title}`,
+        url: `/article/query/${page}/json?k=${title}`,
         showLoading: false,
         success: this.success,
         fail: this.fail
       })
     } else {
       http.get({
-        url: `http://www.wanandroid.com/article/list/${page}/json?cid=${cid}`,
+        url: `/article/list/${page}/json?cid=${cid}`,
         showLoading: false,
         success: this.success,
         fail: this.fail
@@ -160,9 +160,9 @@ Page({
     var id = that.data.isCollectPage?that.data.items[e.currentTarget.id].originId:that.data.items[e.currentTarget.id].id
     var url=''
     if(that.data.items[e.currentTarget.id].collect||that.data.isCollectPage) {
-      url = `http://www.wanandroid.com/lg/uncollect_originId/${id}/json`
+      url = `/lg/uncollect_originId/${id}/json`
     } else {
-      url = `http://www.wanandroid.com/lg/collect/${id}/json`
+      url = `/lg/collect/${id}/json`
     }
     http.post({
       url: url,
