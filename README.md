@@ -54,6 +54,10 @@ wx-wanandroid 是根据 [wanandroidAPI](http://www.wanandroid.com/blog/show/2) �
 
 你也可以自己在 [微信公众平台](https://mp.weixin.qq.com) 申请小程序 appid 然后上传代码体检即可
 
+![扫描二维码体验](https://upload-images.jianshu.io/upload_images/4753754-1119eaf13eb806e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
 ### todolist
 - [x] ~~大部分功能及 ui 2018-05-21~~
 - [x] ~~完善登录注册功能模块 2018-05-22~~
